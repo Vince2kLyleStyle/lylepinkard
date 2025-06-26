@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Brand – Home</title>
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" />
+
+  <!-- Swiper Carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <style>
+    :root {
+      --brand-primary: #ff4a7d;
+    }
+    .bg-brand { background: var(--brand-primary); }
+    .text-brand { color: var(--brand-primary); }
+    .swiper:not(.swiper-initialized) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: 1.5rem;
+    }
+    .swiper:not(.swiper-initialized) .swiper-slide {
+      width: 100% !important;
+      margin: 0 !important;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-[#fef9fb]">
+
+  <!-- Navbar -->
+  <nav class="w-full bg-white/70 backdrop-blur sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="#" class="text-2xl font-extrabold tracking-tight text-brand">YOUR&nbsp;BRAND</a>
+      <div class="hidden md:flex gap-6 text-sm font-semibold">
+        <a href="#products" class="hover:text-brand">Shop</a>
+        <a href="#about" class="hover:text-brand">About</a>
+        <a href="#contact" class="hover:text-brand">Contact</a>
+      </div>
+      <button aria-label="Cart" class="relative">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9h14l-2-9M9 22a2 2 0 100-4 2 2 0 000 4zm8 0a2 2 0 100-4 2 2 0 000 4z" />
+        </svg>
+        <span class="absolute -top-1 -right-2 bg-brand text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=1600&q=60');">
+    <div class="backdrop-brightness-50 flex items-center justify-center h-full py-24 px-4">
+      <div class="text-center text-white max-w-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Fresh drops for every vibe</h1>
+        <p class="mb-8 text-lg">Hand‑crafted apparel & accessories, shipped worldwide.</p>
+        <a href="#products" class="inline-block bg-brand hover:bg-pink-700 text-white font-semibold px-8 py-3 rounded-full transition">Shop Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Carousel -->
+  <section id="products" class="py-16 bg-white">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">Featured Products</h2>
+
+    <div class="swiper mySwiper max-w-6xl mx-auto px-4">
+      <div class="swiper-wrapper">
+        <!-- Product 1 -->
+        <div class="swiper-slide flex justify-center py-8">
+          <div class="w-64 bg-[#fff7fa] rounded-2xl overflow-hidden shadow-lg flex flex-col">
+            <img src="https://images.unsplash.com/photo-1612259114660-3a5401cc6a2e?auto=format&fit=crop&w=600&q=60" alt="Strawberry Hoodie" class="h-64 object-cover w-full" />
+            <div class="p-4 flex flex-col gap-2 flex-grow">
+              <h3 class="font-semibold text-lg">Strawberry Hoodie</h3>
+              <p class="text-sm text-gray-500">80% cotton, 20% recycled poly</p>
+              <span class="font-bold text-brand mt-auto">$49.99</span>
+              <button onclick="checkout('price_1Rddq7P8bicd4jeVkwm4T5lv')" class="mt-2 bg-brand hover:bg-pink-700 text-white text-center py-2 rounded-lg">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swiper Controls -->
+      <div class="swiper-pagination !static mt-8"></div>
+      <div class="swiper-button-prev hidden md:flex"></div>
+      <div class="swiper-button-next hidden md:flex"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-[#fef9fb] py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Our Story</h2>
+      <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        Born in 2025, Your Brand fuses playful aesthetics with sustainable materials. Each drop is crafted in small batches and a portion of every sale is donated to mental health charities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-900 text-gray-200 py-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-bold text-lg mb-3">Stay in the loop</h3>
+        <p class="text-sm mb-4">Sign up for drop alerts & exclusive deals.</p>
+        <form class="flex gap-2">
+          <input type="email" placeholder="Email" class="flex-grow px-3 py-2 rounded-lg outline-none text-black" />
+          <button type="submit" class="bg-brand hover:bg-pink-700 text-white px-4 py-2 rounded-lg font-semibold">Join</button>
+        </form>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#products" class="hover:text-white">Shop</a></li>
+          <li><a href="#about" class="hover:text-white">About</a></li>
+          <li><a href="#" class="hover:text-white">FAQ</a></li>
+          <li><a href="#" class="hover:text-white">Shipping & Returns</a></li>
+        </ul>
+      </div>
+      <div class="text-sm">
+        <h3 class="font-bold text-lg mb-3">Contact</h3>
+        <p>Email: support@yourbrand.com</p>
+        <p>Instagram: @yourbrand</p>
+        <p class="mt-6">© 2025 Your Brand. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper Init -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.Swiper) {
+        new Swiper('.mySwiper', {
+          slidesPerView: 1,
+          spaceBetween: 24,
+          loop: true,
+          pagination: { el: '.swiper-pagination', clickable: true },
+          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+          breakpoints: {
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          },
+        });
+      }
+    });
+
+    async function checkout(priceId) {
+      try {
+        const res = await fetch('/api/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ priceId })
+        });
+        const { url } = await res.json();
+        window.location = url;
+      } catch (err) {
+        alert('Checkout failed.');
+        console.error(err);
+      }
+    }
+  </script>
+</body>
+</html>
